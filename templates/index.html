@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Engine load Prediction Form</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('result')}}"method="post">
+      <label for="VEHICLE_ID">VEHICLE_ID</label> 
+      <select id="VEHICLE_ID"name="VEHICLE_ID"> 
+        <option value="0">car1</option> 
+        <option value="1">car2</option> 
+        <option value="2">car3</option> 
+        <option value="3">car4</option> 
+        <option value="4">car5</option> 
+        <option value="5">car6</option> 
+        <option value="6">car7</option> 
+        <option value="7">car8</option> 
+        <option value="8">car9</option> 
+        <option value="9">car10</option> 
+        <option value="10">car11</option> 
+        <option value="11">car12</option> 
+        <option value="12">car13</option> 
+        <option value="13">car14</option> 
+    	<input type="text" name="ENGINE_COOLANT_TEMP" placeholder="ENGINE_COOLANT_TEMP" required="required" />btw:[0-200] 
+        <input type="text" name="ENGINE_RPM" placeholder="ENGINE_RPM" required="required" />btw:[0-4000]
+		      <input type="text" name="AIR_INTAKE_TEMP" placeholder="AIR_INTAKE_TEMP" required="required" />btw:[0-80] 
+            <input type="text" name="THROTTLE_POS" placeholder="THROTTLE_POS" required="required" />btw:[0-80] 
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
